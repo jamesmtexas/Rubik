@@ -31,6 +31,7 @@ Cube::Cube(bool scrambled) {
   }
 }
 void Cube::moves(std::string sequence) {
+  std::string outputSequence = "";
   int sequenceLength = sequence.length();
   for (int i=0; i<sequenceLength; ++i) {
     switch (sequence[i]) {

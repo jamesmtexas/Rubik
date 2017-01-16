@@ -11,7 +11,7 @@ int Cross::checkCross(Cube &cube) { //must check if in correct position as well
   if (!cube.cubies[1][0] && !cube.cubies[3][0] && !cube.cubies[5][0] && !cube.cubies[7][0])
     return 0;
   else
-    return -1;
+    return 1;
 }
 
 void Cross::solveEdge(Cube &cube) {
@@ -162,10 +162,207 @@ void Cross::solveEdge(Cube &cube) {
             break;
           }
           case 3: //White edge on green side
+            if (edge == 1) {//Yellow side
+              switch(cube.cubies[6][1]) {
+                case 2:
+                  cube.moves("RRRFR");
+                  break;
+                case 3:
+                  cube.moves("UFRRRFFF");
+                  break;
+                case 4:
+                  cube.moves("RBBBRRR");
+                  break;
+                case 5:
+                  cube.moves("FFFLF");
+                  break;
+                }
+              }
+              else if (edge == 3) { //Colored edge on red side
+                switch(cube.cubies[5][2]) {
+                  case 2:
+                    cube.moves("F");
+                    break;
+                  case 3:
+                    cube.moves("FFFUUUFRR");
+                    break;
+                  case 4:
+                    cube.moves("RRBBBRR");
+                    break;
+                  case 5:
+                    cube.moves("FFFUFLL");
+                    break;
+
+                }
+              }
+              else if (edge == 5) { //check color on orange side
+                switch(cube.cubies[3][4]) {
+                  case 2:
+                    cube.moves("RRFRR");
+                    break;
+                  case 3:
+                    cube.moves("BUBBBRR");
+                    break;
+                  case 4:
+                    cube.moves("BBB");
+                    break;
+                  case 5:
+                    cube.moves("RRRUFFFLF");
+                    break;
+                }
+              }
+              else if (edge == 7) { //check white side
+                switch (cube.cubies[6][0]) {
+                  case 2:
+                    cube.moves("RFRRR");
+                    break;
+                  case 3:
+                    cube.moves("RRUFRRRF");
+                    break;
+                  case 4:
+                    cube.moves("RRRBBBR");
+                    break;
+                  case 5:
+                    cube.moves("RRUFFFLF");
+                    break;
+                }
+              }
             break;
           case 4: //White edge on orange side
-            break;
+            if (edge == 1) {//Yellow side
+              switch(cube.cubies[1][1]) {
+                case 2:
+                    cube.moves("URRRFR");
+                    break;
+                  case 3:
+                    cube.moves("BBBRB");
+                    break;
+                  case 4:
+                    cube.moves("URBBBRRR");
+                    break;
+                  case 5:
+                    cube.moves("BLLLBBB");
+                    break;
+                  }
+                }
+                else if (edge == 3) { //Colored edge on green side
+                  switch(cube.cubies[3][3]) {
+                    case 2:
+                      cube.moves("RRRURFF");
+                        break;
+                        case 3:
+                          cube.moves("R");
+                          break;
+                        case 4:
+                          cube.moves("RRRUUURBB");
+                          break;
+                        case 5:
+                          cube.moves("RRRUURLL");
+                          break;
+
+                        }
+                      }
+                else if (edge == 5) { //check color on blue side
+                  switch(cube.cubies[5][5]) {
+                    case 2:
+                      cube.moves("LUUULLLFF");
+                      break;
+                    case 3:
+                      cube.moves("LUULLLRR");
+                      break;
+                    case 4:
+                      cube.moves("LULLLBB");
+                      break;
+                    case 5:
+                      cube.moves("LLL");
+                      break;
+                    }
+                  }
+                  else if (edge == 7) { //check white side
+                    switch (cube.cubies[7][0]) {
+                      case 2:
+                        cube.moves("BBURRRFR");
+                        break;
+                      case 3:
+                        cube.moves("BRBBB");
+                        break;
+                      case 4:
+                        cube.moves("BBURBBBRRR");
+                        break;
+                      case 5:
+                        cube.moves("BBBLLLB");
+                        break;
+                      }
+                    }
+              break;
           case 5: //White edge on blue side
+
+          if (edge == 1) {//Yellow side
+            switch(cube.cubies[3][1]) {
+              case 2:
+                cube.moves("LFLLL");
+                break;
+              case 3:
+                cube.moves("UUUFRRRFFF");
+                break;
+              case 4:
+                cube.moves("LLLBL");
+                break;
+              case 5:
+                cube.moves("UUUFFFLF");
+                break;
+            }
+          }
+          else if (edge == 3) { //Colored edge on orange side
+            switch(cube.cubies[5][4]) {
+              case 2:
+                cube.moves("LLFFFLL");
+                break;
+              case 3:
+                cube.moves("LUUUFRRRFFF");
+                break;
+              case 4:
+                cube.moves("B");
+                break;
+              case 5:
+                cube.moves("LUUUFFFLF");
+                break;
+
+            }
+          }
+          else if (edge == 5) { //check color on red side
+            switch(cube.cubies[3][2]) {
+            case 2:
+              cube.moves("FFF");
+              break;
+            case 3:
+              cube.moves("FUUUFFFRR");
+              break;
+            case 4:
+              cube.moves("FUUFFFBB");
+              break;
+            case 5:
+              cube.moves("FUFFFLL");
+              break;
+            }
+          }
+          else if (edge == 7) { //check white side
+            switch (cube.cubies[3][0]) {
+            case 2:
+              cube.moves("LLLFFFL");
+              break;
+            case 3:
+              cube.moves("LLUFRRRFFF");
+              break;
+            case 4:
+              cube.moves("LBLLL");
+              break;
+            case 5:
+              cube.moves("LLUFFFLF");
+              break;
+            }
+          }
+
             break;
         }
       }
