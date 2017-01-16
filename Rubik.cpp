@@ -6,7 +6,7 @@ int main() {
 
   Cube::Cube myCube(false);
 
-  myCube.moves("RR");
+  myCube.moves("FFFRU");
   myCube.output();
   Cross::solveCross(myCube);
   myCube.output();

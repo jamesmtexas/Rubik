@@ -112,12 +112,16 @@ void Cross::solveEdge(Cube &cube) {
             else if (edge == 3) { //Colored edge on blue side
               switch(cube.cubies[5][5]) {
                 case 2:
+                  cube.moves("LDLLL");
                   break;
                 case 3:
+                  cube.moves("UUFUU");
                   break;
                 case 4:
+                  cube.moves("LLLULBB");
                   break;
                 case 5:
+                  cube.moves("L");
                   break;
 
               }
@@ -125,24 +129,32 @@ void Cross::solveEdge(Cube &cube) {
             else if (edge == 5) { //check color on green side
               switch(cube.cubies[3][3]) {
               case 2:
+                cube.moves("RRRDDDR");
                 break;
               case 3:
+                cube.moves("RRR");
                 break;
               case 4:
+                cube.moves("RUUURRRBB");
                 break;
               case 5:
+                cube.moves("RUURRRLL");
                 break;
               }
             }
             else if (edge == 7) { //check white side
               switch (cube.cubies[1][0]) {
               case 2:
+                cube.moves("FFFDRRRDDD");
                 break;
               case 3:
+                cube.moves("FFFRRR");
                 break;
               case 4:
+                cube.moves("FFUUURBBBRRR");
                 break;
               case 5:
+                cube.moves("FL");
                 break;
               }
             }
