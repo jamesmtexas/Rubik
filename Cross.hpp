@@ -4,9 +4,10 @@
 #include "Cube.hpp"
 
 class Cross {
-  void solveCross(Cube);
-  int checkCross(Cube);
-  void solveEdge(Cube);
+public:
+  static void solveCross(Cube&);
+  static int checkCross(Cube&);
+  static void solveEdge(Cube&);
 };
 
 #endif
