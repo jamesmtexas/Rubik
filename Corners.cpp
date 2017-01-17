@@ -15,39 +15,45 @@ void Corners::solveCorners(Cube &cube) {
         cube.moves("U");
       }
       cube.moves("FUFFF");
+
     }
     if (cube.cubies[2][0] == 0 || cube.cubies[8][2] == 0 || cube.cubies[6][3] == 0) {
       while (cube.cubies[8][1] == 0 || cube.cubies[2][2] == 0 || cube.cubies[0][3] == 0 ) {
         cube.moves("U");
       }
       cube.moves("RURRR");
+
     }
     if (cube.cubies[6][0] == 0 || cube.cubies[8][4] == 0 || cube.cubies[6][5] == 0) {
       while (cube.cubies[0][1] == 0 || cube.cubies[2][4] == 0 || cube.cubies[0][5] == 0 ) {
         cube.moves("U");
       }
       cube.moves("LULLL");
+
     }
     if (cube.cubies[8][0] == 0 || cube.cubies[8][3] == 0 || cube.cubies[6][4] == 0) {
-      while (cube.cubies[8][1] == 0 || cube.cubies[2][3] == 0 || cube.cubies[0][4] == 0 ) {
+      while (cube.cubies[2][1] == 0 || cube.cubies[2][3] == 0 || cube.cubies[0][4] == 0 ) {
         cube.moves("U");
       }
       cube.moves("BUBBB");
+
     }
   }
+
+
   while (checkCorners(cube)) {
 
     //then perform the alg for the case: RUURRRUUURURRR, RURRR, FFFUUUF
 
     if (cube.cubies[8][1] == 0) {
       if (cube.cubies[2][2] == 2) { //red and blue
-        cube.moves("UUUFUUFFFUUUFUFFF");
+        cube.moves("UFUUFFFUUUFUFFF");
       }
       else if (cube.cubies[2][2] == 3) { //green and red
         cube.moves("RUURRRUUURURRR");
       }
       else if (cube.cubies[2][2] == 4) { //orange and green
-        cube.moves("UUURRRURUURRRUUUR");
+        cube.moves("UUUBUUBBBUUUBUBBB");
       }
       else if (cube.cubies[2][2] == 5){ //orange and blue
         cube.moves("UULUUULLLUULULLL");
@@ -95,6 +101,7 @@ void Corners::solveCorners(Cube &cube) {
 
 int Corners::checkCorners(Cube &cube) {
   if (!cube.cubies[0][0] && !cube.cubies[2][0] && !cube.cubies[6][0] && !cube.cubies[8][0]) {
+
     return 0;
   }
   else {
@@ -106,8 +113,14 @@ int Corners::checkBottomLayer(Cube &cube) {
   if (cube.cubies[0][0] && cube.cubies[2][0] && cube.cubies[6][0] && cube.cubies[8][0]
     && cube.cubies[6][2] && cube.cubies[8][2] && cube.cubies[6][3] && cube.cubies[8][3]
     && cube.cubies[6][4] && cube.cubies[8][4] && cube.cubies[6][5] && cube.cubies[8][5]) {
+
     return 0;
   }
+
+  else if (!cube.cubies[0][0] && !cube.cubies[2][0] && !cube.cubies[6][0] && !cube.cubies[8][0]) {
+    return 0;
+  }
+
   else {
     return 1;
   }

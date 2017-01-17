@@ -12,6 +12,7 @@ int main(int argc, char **argv) {
     myCube.moves(argString);
     Cross::solveCross(myCube);
     Corners::solveCorners(myCube);
+    myCube.output();
   }
   return 0;
 }

@@ -8,8 +8,9 @@ void Cross::solveCross(Cube &cube) {
 }
 
 int Cross::checkCross(Cube &cube) { //must check if in correct position as well
-  if (!cube.cubies[1][0] && !cube.cubies[3][0] && !cube.cubies[5][0] && !cube.cubies[7][0])
+  if (!cube.cubies[1][0] && !cube.cubies[3][0] && !cube.cubies[5][0] && !cube.cubies[7][0]) {
     return 0;
+  }
   else
     return 1;
 }
@@ -21,6 +22,7 @@ void Cross::solveEdge(Cube &cube) {
     for (int edge = 1; edge<9; edge+=2) {
       if (cube.cubies[edge][side] == 0) {
         //Solve edge
+
         switch (side) {
 
 
