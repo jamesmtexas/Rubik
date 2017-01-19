@@ -10,11 +10,23 @@ void OLL::solveOLL(Cube &cube) {
     state = findState(cube);
   }
   solveCase(cube, state);
-  std::cout << state << std::endl;
 }
 
 void OLL::solveCase(Cube &cube, int state) {
-
+  switch(state) {
+    case 1:
+      cube.moves("FRURRRUUUFFF");
+      break;
+    case 2:
+      cube.moves("FRURRRUUURURRRUUUFFF");
+      break;
+    case 3:
+      cube.moves("FRURRRUUURURRRUUURURRRUUUFFF");
+      break;
+    case 4:
+      cube.moves("BULUUULLLBBB");
+      break;
+  }
 }
 
 int OLL::findState(Cube &cube) {
@@ -106,6 +118,21 @@ int OLL::findState(Cube &cube) {
   }
   else if (topLayer[2] && topLayer[4] && topLayer[5] && topLayer[7] && topLayer[8] && orangeSide[1] && blueSide[0] && blueSide[1] && blueSide[2]) {
     return 4;
+  }
+  else if (topLayer[3] && topLayer[4] && topLayer[5] && redSide[1] && redSide[2] && orangeSide[0] && orangeSide[1] && blueSide[0] && blueSide[2]) {
+    return 5;
+  }
+  else if (topLayer[0] && topLayer[3] && topLayer[4] && topLayer[6] && topLayer[7] && greenSide[0] && greenSide[1] && greenSide[2] && orangeSide[1]) {
+    return 6;
+  }
+  else if (topLayer[1] && topLayer[4] && topLayer[5] && redSide[0] && redSide[1] && greenSide[0] && greenSide[2] && orangeSide[2] && blueSide[1]) {
+    return 7;
+  }
+  else if (topLayer[2] && topLayer[4] && topLayer[5] && topLayer[7] && redSide[2] && greenSide[1] && greenSide[2] && orangeSide[1] && blueSide[0] && blueSide[1]) {
+    return 8;
+  }
+  else if () {
+    return 9;
   }
   else {
     return 0;
