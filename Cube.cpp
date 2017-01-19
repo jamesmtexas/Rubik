@@ -56,7 +56,46 @@ void Cube::moves(std::string sequence) {
     }
   }
 
-  std::cout << sequence << std::endl;
+  std::cout << printSequence(sequence) << std::endl;
+}
+
+std::string Cube::printSequence(std::string sequence) {
+  std::string newSequence;
+  for (int i=0; i < sequence.length(); ++i) {
+    if (sequence.length() > (i+2)) {
+      if ((sequence[i] == sequence[i+1]) && (sequence[i] == sequence[i+2])){ // RRR -> R'
+        newSequence += sequence[i];
+        newSequence += "\'";
+        i+=2;
+      }
+      else if (sequence[i] == sequence[i+1]) {
+        newSequence += sequence[i];
+        newSequence += "2";
+        i += 1;
+      }
+      else {
+        newSequence += sequence[i];
+      }
+    }
+    else if (sequence.length() > (i+1)) {
+      if (sequence[i] == sequence[i+1]) {
+        newSequence += sequence[i];
+        newSequence += "2";
+        i += 1;
+      }
+      else {
+        newSequence += sequence[i];
+      }
+    }
+    else {
+      newSequence += sequence[i];
+    }
+
+    newSequence += " ";
+
+  }
+
+  return newSequence;
 }
 
 void Cube::output() {

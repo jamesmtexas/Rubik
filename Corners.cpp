@@ -1,5 +1,4 @@
 #include "Corners.hpp"
-#include "Cross.hpp"
 #include "Cube.hpp"
 
 
