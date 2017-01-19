@@ -2,8 +2,8 @@
 #include "Cube.hpp"
 
 void Cross::solveCross(Cube &cube) {
-  while (Cross::checkCross(cube)) {
-    Cross:solveEdge(cube);
+  while (checkCross(cube)) {
+    solveEdge(cube);
   }
 }
 

@@ -5,8 +5,10 @@
 
 class Edges {
 
-  static void solveEdge(Cube &cube);
+public:
   static void solveEdges(Cube &cube);
+private:
+  static void solveEdge(Cube &cube);
   static int checkEdges(Cube &cube);
 
 };

@@ -1,6 +1,7 @@
 #include "Cube.hpp"
 #include "Cross.hpp"
 #include "Corners.hpp"
+#include "Edges.hpp"
 #include "OLL.hpp"
 #include <iostream>
 
@@ -11,10 +12,11 @@ int main(int argc, char **argv) {
     std::string argString = std::string(argv[1]);
     std::cout << "Scramble: ";
     myCube.moves(argString);
-    //Cross::solveCross(myCube);
-    //Corners::solveCorners(myCube);
+    Cross::solveCross(myCube);
+    Corners::solveCorners(myCube);
+    Edges::solveEdges(myCube);
     OLL::solveOLL(myCube);
-    //myCube.output();
+    myCube.output();
   }
   return 0;
 }

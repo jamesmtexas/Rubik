@@ -29,25 +29,24 @@ void Edges::solveEdge(Cube &cube) {
     }
     else if (cube.cubies[1][1] == 4) {
       if (cube.cubies[1][4] == 5) {
-
+        cube.moves("UUULLLUUULLLUUULLLULUL");
       }
       else if (cube.cubies[1][4] == 3) {
-
+        cube.moves("BBBUUUBBBUUUBBBUBUB");
       }
     }
     else if (cube.cubies[1][1] == 5) {
       if (cube.cubies[1][4] == 2) {
-
+        cube.moves("UUFFFUUUFFFUUUFFFUFUF");
       }
       else if (cube.cubies[1][4] == 4) {
-
+        cube.moves("LLLUUULLLUUULLLULUL");
       }
     }
   }
 
-  }
   else if (cube.cubies[5][1] != 1 && cube.cubies[1][3] != 1) {
-
+    
   }
   else if (cube.cubies[7][1] != 1 && cube.cubies[1][2] != 1) {
 

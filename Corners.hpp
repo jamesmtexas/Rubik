@@ -7,8 +7,9 @@
 class Corners {
 
 public:
-  static int checkCorners(Cube&);
   static void solveCorners(Cube&);
+private:
+  static int checkCorners(Cube&);
   static int checkBottomLayer(Cube &cube);
 
 };

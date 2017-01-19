@@ -106,7 +106,7 @@ std::cout << "Finding case" << std::endl;
   else if (topLayer[1] && topLayer[3] && topLayer[4] && topLayer[5] && topLayer[7] && redSide[0] && redSide[2] && orangeSide[0] && orangeSide[2]) {
     return 3;
   }
-  else if (topLayer[2] && topLayer[4] && topLayer[5] && topLayer[7] &&topLayer[8] && orangeSide[1] && blueSide[0] && blueSide[1] && blueSide[2]) {
+  else if (topLayer[2] && topLayer[4] && topLayer[5] && topLayer[7] && topLayer[8] && orangeSide[1] && blueSide[0] && blueSide[1] && blueSide[2]) {
     return 4;
   }
   else {
