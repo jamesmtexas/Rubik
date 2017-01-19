@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
     Cross::solveCross(myCube);
     Corners::solveCorners(myCube);
     Edges::solveEdges(myCube);
-    OLL::solveOLL(myCube);
+    //OLL::solveOLL(myCube);
     myCube.output();
   }
   return 0;

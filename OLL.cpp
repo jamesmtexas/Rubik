@@ -14,12 +14,10 @@ void OLL::solveOLL(Cube &cube) {
 }
 
 void OLL::solveCase(Cube &cube, int state) {
-  std::cout << "Solving case" << std::endl;
 
 }
 
 int OLL::findState(Cube &cube) {
-std::cout << "Finding case" << std::endl;
   int topLayer[9];
   int redSide[3];
   int greenSide[3];
