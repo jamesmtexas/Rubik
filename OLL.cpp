@@ -4,12 +4,22 @@
 #include <string>
 
 void OLL::solveOLL(Cube &cube) {
-  int state = findState(cube);
-  while (state == 0) {
-    cube.moves("U");
-    state = findState(cube);
+  while (!checkOLL(cube)) {
+    int state = findState(cube);
+    while (state == 0) {
+      cube.moves("U");
+      state = findState(cube);
+    }
+    solveCase(cube, state);
   }
-  solveCase(cube, state);
+}
+
+int OLL::checkOLL(Cube &cube) {
+  for (int i=0; i<9; ++i) {
+    if (cube.cubies[i][1] != 1)
+      return 0;
+  }
+  return 1;
 }
 
 void OLL::solveCase(Cube &cube, int state) {

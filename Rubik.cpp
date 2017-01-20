@@ -3,6 +3,7 @@
 #include "Corners.hpp"
 #include "Edges.hpp"
 #include "OLL.hpp"
+#include "PLL.hpp"
 #include <iostream>
 
 int main(int argc, char **argv) {
@@ -16,6 +17,7 @@ int main(int argc, char **argv) {
     Corners::solveCorners(myCube);
     Edges::solveEdges(myCube);
     OLL::solveOLL(myCube);
+    PLL::solvePLL(myCube);
     myCube.output();
   }
   return 0;
