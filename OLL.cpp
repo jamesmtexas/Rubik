@@ -16,21 +16,36 @@ void OLL::solveCase(Cube &cube, int state) {
   switch(state) {
     case 1:
       cube.moves("FRURRRUUUFFF");
+      solveOLL(cube);
       break;
     case 2:
-      cube.moves("FRURRRUUURURRRUUUFFF");
+      cube.moves("BULUUULLLBBB");
+      solveOLL(cube);
       break;
     case 3:
-      cube.moves("FRURRRUUURURRRUUURURRRUUUFFF");
+      cube.moves("FRURRRUUUFFFBULUUULLLBBB");
+      solveOLL(cube);
       break;
     case 4:
-      cube.moves("BULUUULLLBBB");
+      cube.moves("RURRRURUURRR");
       break;
     case 5:
-      cube.moves("BULUUULLLULUUULLLBBB");
+      cube.moves("RRRUUURUUURRRUUR");
       break;
     case 6:
-      cube.moves("BBBUUURRRURB");
+      cube.moves("FRURRRUUURURRRUUURURRRUUUFFF");
+      break;
+    case 7:
+      cube.moves("RUURRUUURRUUURRUUR");
+      break;
+    case 8:
+      cube.moves("RRDRRRUURDDDRRRUURRR");
+      break;
+    case 9:
+      cube.moves("LFRRRFFFLLLFRFFF");
+      break;
+    case 10:
+      cube.moves("FFFLFRRRFFFLLLFR");
       break;
   }
 }
@@ -121,32 +136,35 @@ int OLL::findState(Cube &cube) {
     blueSide[2] = 1;
   }
 
-  if (topLayer[2] && topLayer[3] && topLayer[4] && topLayer[5] && topLayer[8] && redSide[1] && orangeSide[1] && blueSide[0] && blueSide[2]) {
-     return 1;
-  }
-  else if (topLayer[1] && topLayer[3] && topLayer[4] && redSide[1] && redSide[2] && greenSide[1] && orangeSide[0] && blueSide[0] && blueSide[2]) {
-    return 2;
-  }
-  else if (topLayer[1] && topLayer[3] && topLayer[4] && topLayer[5] && topLayer[7] && redSide[0] && redSide[2] && orangeSide[0] && orangeSide[2]) {
-    return 3;
-  }
-  else if (topLayer[2] && topLayer[4] && topLayer[5] && topLayer[7] && topLayer[8] && orangeSide[1] && blueSide[0] && blueSide[1] && blueSide[2]) {
+  if (topLayer[0] != 1 && topLayer[1] == 1 && topLayer[2] != 1 && topLayer[3] == 1 && topLayer[4] == 1 && topLayer[5] == 1 && topLayer[6] == 1 && topLayer[7]  == 1 && topLayer[8] != 1 && redSide[2] == 1 && greenSide[2] == 1 && orangeSide[2] == 1) {
     return 4;
   }
-  else if (topLayer[3] && topLayer[4] && topLayer[5] && redSide[1] && redSide[2] && orangeSide[0] && orangeSide[1] && blueSide[0] && blueSide[2]) {
+  else if (topLayer[0] == 1 && topLayer[1] == 1 && topLayer[2] != 1 && topLayer[3] == 1 && topLayer[4] == 1 && topLayer[5] == 1 && topLayer[6] != 1 && topLayer[7]  == 1 && topLayer[8] != 1 && redSide[0] == 1 && greenSide[0] == 1 && orangeSide[0] == 1) {
     return 5;
   }
-  else if (topLayer[0] && topLayer[3] && topLayer[4] && topLayer[6] && topLayer[7] && greenSide[0] && greenSide[1] && greenSide[2] && orangeSide[1]) {
+  else if (topLayer[0] != 1 && topLayer[1] == 1 && topLayer[2] != 1 && topLayer[3] == 1 && topLayer[4] == 1 && topLayer[5] == 1 && topLayer[6] != 1 && topLayer[7]  == 1 && topLayer[8] != 1 && redSide[0] == 1 && redSide[2] == 1 && orangeSide[0] == 1 && orangeSide[2] == 1) {
     return 6;
   }
-  else if (topLayer[1] && topLayer[4] && topLayer[5] && redSide[0] && redSide[1] && greenSide[0] && greenSide[2] && orangeSide[2] && blueSide[1]) {
+  else if (topLayer[0] != 1 && topLayer[1] == 1 && topLayer[2] != 1 && topLayer[3] == 1 && topLayer[4] == 1 && topLayer[5] == 1 && topLayer[6] != 1 && topLayer[7]  == 1 && topLayer[8] != 1 && redSide[2] == 1 && orangeSide[0] == 1 && blueSide[0] == 1 && blueSide[2] == 1) {
     return 7;
   }
-  else if (topLayer[2] && topLayer[4] && topLayer[5] && topLayer[7] && redSide[2] && greenSide[1] && greenSide[2] && orangeSide[1] && blueSide[0] && blueSide[1]) {
+  else if (topLayer[0] == 1 && topLayer[1] == 1 && topLayer[2] == 1 && topLayer[3] == 1 && topLayer[4] == 1 && topLayer[5] == 1 && topLayer[6] != 1 && topLayer[7]  == 1 && topLayer[8] != 1 && redSide[0] == 1 && redSide[2] == 1) {
     return 8;
   }
-  else if (topLayer[0] && topLayer[3] && topLayer[4] && topLayer[7] && redSide[2] && greenSide[1] && greenSide[2] && orangeSide[1] && blueSide[2]) {
+  else if (topLayer[0] != 1 && topLayer[1] == 1 && topLayer[2] == 1 && topLayer[3] == 1 && topLayer[4] == 1 && topLayer[5] == 1 && topLayer[6] != 1 && topLayer[7]  == 1 && topLayer[8] == 1 && redSide[0] == 1 && orangeSide[2] == 1) {
     return 9;
+  }
+  else if (topLayer[0] != 1 && topLayer[1] == 1 && topLayer[2] == 1 && topLayer[3] == 1 && topLayer[4] == 1 && topLayer[5] == 1 && topLayer[6] == 1 && topLayer[7]  == 1 && topLayer[8] != 1 && redSide[2] == 1 && blueSide[0] == 1) {
+    return 10;
+  }
+  else if (topLayer[3] == 1 && topLayer[4] == 1 && topLayer[5] == 1) {
+    return 1;
+  }
+  else if (topLayer[4] == 1 && topLayer[5] == 1 && topLayer[7] == 1) {
+    return 2;
+  }
+  else if (topLayer[4] == 1) {
+    return 3;
   }
   else {
     return 0;
