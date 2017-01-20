@@ -26,6 +26,12 @@ void OLL::solveCase(Cube &cube, int state) {
     case 4:
       cube.moves("BULUUULLLBBB");
       break;
+    case 5:
+      cube.moves("BULUUULLLULUUULLLBBB");
+      break;
+    case 6:
+      cube.moves("BBBUUURRRURB");
+      break;
   }
 }
 
@@ -39,6 +45,14 @@ int OLL::findState(Cube &cube) {
   for (int i=0; i<9; ++i) {
     topLayer[i] = 0;
   }
+
+  for (int i=0; i<2; ++i) {
+    redSide[i] = 0;
+    greenSide[i] = 0;
+    orangeSide[i] = 0;
+    blueSide[i] = 0;
+  }
+
   if (cube.cubies[0][1] == 1) {
     topLayer[0] = 1;
   }
@@ -131,7 +145,7 @@ int OLL::findState(Cube &cube) {
   else if (topLayer[2] && topLayer[4] && topLayer[5] && topLayer[7] && redSide[2] && greenSide[1] && greenSide[2] && orangeSide[1] && blueSide[0] && blueSide[1]) {
     return 8;
   }
-  else if () {
+  else if (topLayer[0] && topLayer[3] && topLayer[4] && topLayer[7] && redSide[2] && greenSide[1] && greenSide[2] && orangeSide[1] && blueSide[2]) {
     return 9;
   }
   else {
