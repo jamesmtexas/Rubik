@@ -149,22 +149,18 @@ void Edges::solveEdge(Cube &cube) {
       }
     }
   }
-  else {
-    if (cube.cubies[3][2] != 2 || cube.cubies[5][2] != 2 || cube.cubies[3][4] != 4 || cube.cubies[5][4] != 4) {
+  else
       cube.moves("RURURUUURRRUUURRR");
-    }
-  }
-
 }
 
 int Edges::checkEdges(Cube &cube) {
-  if (cube.cubies[3][2] == 1 || cube.cubies[5][2] == 1)
+  if (cube.cubies[3][2] != 2 || cube.cubies[5][2] != 2)
     return 0;
-  else if (cube.cubies[3][3] == 1 || cube.cubies[5][3] == 1)
+  else if (cube.cubies[3][3] != 3 || cube.cubies[5][3] != 3)
     return 0;
-  else if (cube.cubies[3][4] == 1 || cube.cubies[5][4] == 1)
+  else if (cube.cubies[3][4] != 4 || cube.cubies[5][4] != 4)
     return 0;
-  else if (cube.cubies[3][5] == 1 || cube.cubies[5][5] == 1)
+  else if (cube.cubies[3][5] != 5 || cube.cubies[5][5] != 5)
     return 0;
   else
     return 1;

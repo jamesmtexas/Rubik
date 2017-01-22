@@ -4,7 +4,15 @@
 #include <string>
 
 void OLL::solveOLL(Cube &cube) {
-  while (!checkOLL(cube)) {
+  if (!checkEdges(cube)) {
+    int state = findEdges(cube);
+    while (state == 0) {
+      cube.moves("U");
+      state = findEdges(cube);
+    }
+    solveCase(cube, state);
+  }
+  if (!checkOLL(cube)) {
     int state = findState(cube);
     while (state == 0) {
       cube.moves("U");
@@ -12,6 +20,7 @@ void OLL::solveOLL(Cube &cube) {
     }
     solveCase(cube, state);
   }
+
 }
 
 int OLL::checkOLL(Cube &cube) {
@@ -164,20 +173,67 @@ int OLL::findState(Cube &cube) {
   else if (topLayer[0] != 1 && topLayer[1] == 1 && topLayer[2] == 1 && topLayer[3] == 1 && topLayer[4] == 1 && topLayer[5] == 1 && topLayer[6] != 1 && topLayer[7]  == 1 && topLayer[8] == 1 && redSide[0] == 1 && orangeSide[2] == 1) {
     return 9;
   }
-  else if (topLayer[0] != 1 && topLayer[1] == 1 && topLayer[2] == 1 && topLayer[3] == 1 && topLayer[4] == 1 && topLayer[5] == 1 && topLayer[6] == 1 && topLayer[7]  == 1 && topLayer[8] != 1 && redSide[2] == 1 && blueSide[0] == 1) {
+  else if (topLayer[0] != 1 && topLayer[1] == 1 && topLayer[2] == 1 && topLayer[3] == 1 && topLayer[4] == 1 && topLayer[5] == 1 && topLayer[6] == 1 && topLayer[7] == 1 && topLayer[8] != 1 && redSide[2] == 1 && blueSide[0] == 1) {
     return 10;
-  }
-  else if (topLayer[3] == 1 && topLayer[4] == 1 && topLayer[5] == 1) {
-    return 1;
-  }
-  else if (topLayer[4] == 1 && topLayer[5] == 1 && topLayer[7] == 1) {
-    return 2;
-  }
-  else if (topLayer[4] == 1) {
-    return 3;
   }
   else {
     return 0;
   }
 
+}
+
+int OLL::findEdges(Cube &cube) {
+
+  int topLayer[9];
+
+  for (int i=0; i<9; ++i) {
+    topLayer[i] = 0;
+  }
+
+  if (cube.cubies[0][1] == 1) {
+    topLayer[0] = 1;
+  }
+  if (cube.cubies[1][1] == 1) {
+    topLayer[1] = 1;
+  }
+  if (cube.cubies[2][1] == 1) {
+    topLayer[2] = 1;
+  }
+  if (cube.cubies[3][1] == 1) {
+    topLayer[3] = 1;
+  }
+  if (cube.cubies[4][1] == 1) {
+    topLayer[4] = 1;
+  }
+  if (cube.cubies[5][1] == 1) {
+    topLayer[5] = 1;
+  }
+  if (cube.cubies[6][1] == 1) {
+    topLayer[6] = 1;
+  }
+  if (cube.cubies[7][1] == 1) {
+    topLayer[7] = 1;
+  }
+  if (cube.cubies[8][1] == 1) {
+    topLayer[8] = 1;
+  }
+
+  if (topLayer[3] == 1 && topLayer[4] == 1 && topLayer[5] == 1) {
+    return 1;
+  }
+  else if (topLayer[5] == 1 && topLayer[7] == 1) {
+    return 2;
+  }
+  else if (topLayer[0] != 1 && topLayer[1] != 1 && topLayer[2] != 1 && topLayer[3] != 1 && topLayer[5] != 1 && topLayer[6] != 1 && topLayer[7] != 1 && topLayer[8] != 1)
+    return 3;
+  else
+    return 0;
+
+}
+
+int OLL::checkEdges(Cube &cube) {
+  if (cube.cubies[1][1] != 1 || cube.cubies[3][1] != 1 || cube.cubies[5][1] != 1 || cube.cubies[7][1] != 1) {
+    return 0;
+  }
+  return 1;
 }
