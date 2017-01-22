@@ -53,7 +53,7 @@ void Edges::solveEdge(Cube &cube) {
         cube.moves("RRRUUURRRUUURRRURUR");
       }
       else if (cube.cubies[1][3] == 5) {
-        cube.moves("UULUUULUUULULLLULLL");
+        cube.moves("UULULULUUULLLUUULLL");
       }
     }
     else if (cube.cubies[5][1] == 3) {
