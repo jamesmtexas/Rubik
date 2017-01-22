@@ -25,7 +25,7 @@ void PLL::solveEdges(Cube &cube) {
     cube.moves("RRURURRRUUURRRUUURRRURRR");
   }
   else if (cube.cubies[1][2] == 3 && cube.cubies[1][3] == 5 && cube.cubies[1][4] == 4 && cube.cubies[1][5] == 2) {
-    cube.moves("RUUURURURRRUUURRRUUURR");
+    cube.moves("RUUURURURUUURRRUUURR");
   }
   else if (cube.cubies[1][2] == 4 && cube.cubies[1][3] == 5 && cube.cubies[1][4] == 2 && cube.cubies[1][5] == 3) {
     cube.moves("RRLLDRRLLUURRLLDRRLL");
