@@ -17,10 +17,15 @@ int main(int argc, char **argv) {
     std::cout << "Scramble: ";
     myCube.moves(scramble);
     Cross::solveCross(myCube);
+    std::cout << "Cross solved" << std::endl;
     Corners::solveCorners(myCube);
+    std::cout << "Corners solved" << std::endl;
     Edges::solveEdges(myCube);
+    std::cout << "Edges solved" << std::endl;;
     OLL::solveOLL(myCube);
+    std::cout << "OLL solved" << std::endl;
     PLL::solvePLL(myCube);
+    std::cout << "PLL solved" << std::endl;
     myCube.output();
   }
   return 0;

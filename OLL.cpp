@@ -224,10 +224,8 @@ int OLL::findEdges(Cube &cube) {
   else if (topLayer[5] == 1 && topLayer[7] == 1) {
     return 2;
   }
-  else if (topLayer[0] != 1 && topLayer[1] != 1 && topLayer[2] != 1 && topLayer[3] != 1 && topLayer[5] != 1 && topLayer[6] != 1 && topLayer[7] != 1 && topLayer[8] != 1)
-    return 3;
   else
-    return 0;
+    return 3;
 
 }
 

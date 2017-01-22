@@ -18,7 +18,7 @@ void Edges::solveEdge(Cube &cube) {
         cube.moves("URRRUUURRRUUURRRURUR");
       }
       else if (cube.cubies[1][4] == 5) {
-        cube.moves("UUULUUULUUULULLLULLL");
+        cube.moves("BUBUBUUUBBBUUUBBB");
       }
     }
     else if (cube.cubies[1][1] == 3) {
@@ -47,7 +47,7 @@ void Edges::solveEdge(Cube &cube) {
     }
   }
 
-  if (cube.cubies[5][1] != 1 && cube.cubies[1][3] != 1) {
+  else if (cube.cubies[5][1] != 1 && cube.cubies[1][3] != 1) {
     if (cube.cubies[5][1] == 2) {
       if (cube.cubies[1][3] == 3) {
         cube.moves("RRRUUURRRUUURRRURUR");
@@ -81,7 +81,7 @@ void Edges::solveEdge(Cube &cube) {
       }
     }
   }
-  if (cube.cubies[7][1] != 1 && cube.cubies[1][2] != 1) {
+  else if (cube.cubies[7][1] != 1 && cube.cubies[1][2] != 1) {
     if (cube.cubies[7][1] == 2) {
       if (cube.cubies[1][2] == 3) {
         cube.moves("UUURRRUUURRRUUURRRURUR");
@@ -115,7 +115,7 @@ void Edges::solveEdge(Cube &cube) {
       }
     }
   }
-  if (cube.cubies[3][1] != 1 && cube.cubies[1][5] != 1) {
+  else if (cube.cubies[3][1] != 1 && cube.cubies[1][5] != 1) {
     if (cube.cubies[3][1] == 2) {
       if (cube.cubies[1][5] == 3) {
         cube.moves("UURRRUUURRRUUURRRURUR");

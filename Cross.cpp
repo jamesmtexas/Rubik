@@ -1,5 +1,6 @@
 #include "Cross.hpp"
 #include "Cube.hpp"
+#include <iostream>
 
 void Cross::solveCross(Cube &cube) {
   while (checkCross(cube)) {
@@ -248,19 +249,19 @@ void Cross::solveEdge(Cube &cube) {
                   }
                 }
                 else if (edge == 3) { //Colored edge on green side
-                  switch(cube.cubies[3][3]) {
+                  switch(cube.cubies[3][5]) {
                     case 2:
                       cube.moves("RRRURFF");
+                      break;
+                    case 3:
+                        cube.moves("R");
                         break;
-                        case 3:
-                          cube.moves("R");
-                          break;
-                        case 4:
-                          cube.moves("RRRUUURBB");
-                          break;
-                        case 5:
-                          cube.moves("RRRUURLL");
-                          break;
+                    case 4:
+                        cube.moves("RRRUUURBB");
+                        break;
+                    case 5:
+                        cube.moves("RRRUURLL");
+                        break;
 
                         }
                       }
@@ -364,6 +365,42 @@ void Cross::solveEdge(Cube &cube) {
               break;
             }
           }
+
+            break;
+
+          case 0:
+            if (edge == 2) {
+              if (cube.cubies[7][2] != 2) {
+                while (cube.cubies[1][2] == 0 || cube.cubies[7][1] == 0) {
+                  cube.moves("U");
+                }
+                cube.moves("FF");
+              }
+            }
+            else if (edge == 3) {
+              if (cube.cubies[7][3] != 3) {
+                while (cube.cubies[1][3] == 0 || cube.cubies[5][1] == 0) {
+                  cube.moves("U");
+                }
+                cube.moves("RR");
+              }
+            }
+            else if (edge == 4) {
+              if (cube.cubies[7][4] != 4) {
+                while (cube.cubies[1][3] == 0 || cube.cubies[1][1] == 0) {
+                  cube.moves("U");
+                }
+                cube.moves("BB");
+              }
+            }
+            else if (edge == 5) {
+              if (cube.cubies[7][5] != 5) {
+                while (cube.cubies[1][5] == 0 || cube.cubies[3][1] == 0) {
+                  cube.moves("U");
+                }
+                cube.moves("LL");
+              }
+            }
 
             break;
         }

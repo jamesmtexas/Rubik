@@ -33,6 +33,13 @@ void PLL::solveEdges(Cube &cube) {
   else if (cube.cubies[1][2] == 3 && cube.cubies[1][3] == 2 && cube.cubies[1][4] == 5 && cube.cubies[1][5] == 4) {
     cube.moves("URRRUUURUUURURUUURRRURURRUUURRRU");
   }
+  else {
+    cube.moves("RRURURRRUUURRRUUURRRURRR");
+    adjustUFace(cube);
+    cube.moves("RRLLDRRLLUURRLLDRRLL");
+    cube.moves("RRURURRRUUURRRUUURRRURRR");
+    adjustUFace(cube);
+  }
 }
 
 void PLL::solveCorners(Cube &cube) {
@@ -62,7 +69,6 @@ int PLL::checkEdges(Cube &cube) {
       return 1;
     }
     else {
-      adjustUFace(cube);
       return 0;
     }
 }
