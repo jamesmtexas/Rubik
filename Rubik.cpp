@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
     Corners::solveCorners(myCube);
     Edges::solveEdges(myCube);
     OLL::solveOLL(myCube);
-    //PLL::solvePLL(myCube);
+    PLL::solvePLL(myCube);
     myCube.output();
   }
   return 0;

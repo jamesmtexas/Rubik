@@ -57,6 +57,7 @@ void Cube::moves(std::string sequence) {
   }
 
   std::cout << printSequence(sequence) << std::endl;
+  output();
 }
 
 std::string Cube::printSequence(std::string sequence) {
