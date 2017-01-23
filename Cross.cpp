@@ -249,7 +249,7 @@ void Cross::solveEdge(Cube &cube) {
                   }
                 }
                 else if (edge == 3) { //Colored edge on green side
-                  switch(cube.cubies[3][5]) {
+                  switch(cube.cubies[5][3]) {
                     case 2:
                       cube.moves("RRRURFF");
                       break;
