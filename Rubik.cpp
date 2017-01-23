@@ -11,10 +11,12 @@ std::string format(std::string);
 int main(int argc, char **argv) {
 
   Cube::Cube myCube(false);
+    int scrambleNum = 0;
     std::string argString;
     while (std::getline(std::cin, argString)) {
+    ++scrambleNum;
     std::string scramble = format(argString);
-    std::cout << "Scramble: ";
+    std::cout << "Scramble #" << scrambleNum << ": ";
     myCube.moves(scramble);
     Cross::solveCross(myCube);
     std::cout << "Cross solved" << std::endl;
