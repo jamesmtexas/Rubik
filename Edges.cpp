@@ -149,16 +149,16 @@ void Edges::solveEdge(Cube &cube) {
       }
     }
   }
-  else if (cube.cubies[3][2] != 2 && cube.cubies[5][5] != 5) {
+  else if (cube.cubies[3][2] != 2 || cube.cubies[5][5] != 5) {
     cube.moves("LULULUUULLLUUULLL");
   }
-  else if (cube.cubies[5][2] != 2 && cube.cubies[3][3] != 3) {
+  else if (cube.cubies[5][2] != 2 || cube.cubies[3][3] != 3) {
     cube.moves("FUFUFUUUFFFUUUFFF");
   }
-  else if (cube.cubies[5][3] != 3 && cube.cubies[3][4] != 4) {
+  else if (cube.cubies[5][3] != 3 || cube.cubies[3][4] != 4) {
     cube.moves("RURURUUURRRUUURRR");
   }
-  else if (cube.cubies[5][4] != 4 && cube.cubies[3][5] != 5) {
+  else if (cube.cubies[5][4] != 4 || cube.cubies[3][5] != 5) {
     cube.moves("BUBUBUUUBBBUUUBBB");
   }
 
