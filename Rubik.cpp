@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
   //if (argc > 1) {
     //std::string argString = std::string(argv[1]);
     std::string argString;
-    std::getline(std::cin, argString);
+    while (std::getline(std::cin, argString)) {
     std::string scramble = format(argString);
     std::cout << "Scramble: ";
     myCube.moves(scramble);
@@ -29,6 +29,7 @@ int main(int argc, char **argv) {
     PLL::solvePLL(myCube);
     std::cout << "PLL solved" << std::endl;
     myCube.output();
+  }
   //}
   return 0;
 }
@@ -45,7 +46,7 @@ std::string format(std::string s) {
       formatted += s[i-1];
     }
     else if (s[i] == ' ') {
-      
+
     }
     else {
       formatted += s[i];
