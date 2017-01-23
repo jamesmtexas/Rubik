@@ -369,7 +369,7 @@ void Cross::solveEdge(Cube &cube) {
             break;
 
           case 0:
-            if (edge == 1) {
+            if (edge == 2) {
               if (cube.cubies[7][2] != 2) {
                 while (cube.cubies[1][2] == 0 || cube.cubies[7][1] == 0) {
                   cube.moves("U");
@@ -385,7 +385,7 @@ void Cross::solveEdge(Cube &cube) {
                 cube.moves("RR");
               }
             }
-            else if (edge == 5) {
+            else if (edge == 4) {
               if (cube.cubies[7][4] != 4) {
                 while (cube.cubies[1][3] == 0 || cube.cubies[1][1] == 0) {
                   cube.moves("U");
@@ -393,7 +393,7 @@ void Cross::solveEdge(Cube &cube) {
                 cube.moves("BB");
               }
             }
-            else if (edge == 7) {
+            else if (edge == 5) {
               if (cube.cubies[7][5] != 5) {
                 while (cube.cubies[1][5] == 0 || cube.cubies[3][1] == 0) {
                   cube.moves("U");
