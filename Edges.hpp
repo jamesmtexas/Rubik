@@ -10,8 +10,6 @@ public:
 private:
   static void solveEdge(Cube &cube);
   static int checkEdges(Cube &cube);
-  static int checkInPlace(Cube &cube);
-
 };
 
 #endif

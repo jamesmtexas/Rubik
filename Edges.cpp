@@ -7,7 +7,7 @@
 void Edges::solveEdges(Cube &cube) {
 
   while (!checkEdges(cube)) {
-      solveEdge(cube);
+    solveEdge(cube);
   }
 }
 
@@ -149,54 +149,20 @@ void Edges::solveEdge(Cube &cube) {
       }
     }
   }
-
-//Hacky fix
-  if (!checkEdges(cube)) {
-    while (!checkInPlace(cube)) {
-      cube.moves("U");
-    }
-  }
-
-}
-
-int Edges::checkInPlace(Cube &cube) {
-  if (cube.cubies[3][2] != 2 && cube.cubies[5][5] != 5) {
-    if (cube.cubies[3][1] == 1 || cube.cubies[1][5] == 1) {
-      cube.moves("LULULUUULLLUUULLL");
-      return 1;
-    }
-    else {
-      return 0;
-    }
+  else if (cube.cubies[3][2] != 2 && cube.cubies[5][5] != 5) {
+    cube.moves("LULULUUULLLUUULLL");
   }
   else if (cube.cubies[5][2] != 2 && cube.cubies[3][3] != 3) {
-    if (cube.cubies[7][1] == 1 || cube.cubies[1][2] == 1) {
-      cube.moves("FUFUFUUUFFFUUUFFF");
-      return 1;
-    }
-    else {
-      return 0;
-    }
+    cube.moves("FUFUFUUUFFFUUUFFF");
   }
   else if (cube.cubies[5][3] != 3 && cube.cubies[3][4] != 4) {
-    if (cube.cubies[5][1] == 1 || cube.cubies[1][3] == 1) {
-      cube.moves("RURURUUURRRUUURRR");
-      return 1;
-    }
-    else {
-      return 0;
-    }
+    cube.moves("RURURUUURRRUUURRR");
   }
-    else if (cube.cubies[5][4] != 4 && cube.cubies[3][5] != 5) {
-      if (cube.cubies[1][3] == 1 || cube.cubies[1][5] == 1) {
-        cube.moves("LLLUUULLLUUULLLULUL");
-        return 1;
-      }
-      else {
-        return 0;
-      }
-    }
-    return 1;
+  else if (cube.cubies[5][4] != 4 && cube.cubies[3][5] != 5) {
+    cube.moves("BUBUBUUUBBBUUUBBB");
+  }
+
+
 }
 
 int Edges::checkEdges(Cube &cube) {
