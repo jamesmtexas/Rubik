@@ -11,7 +11,7 @@ Example compilation:
 	g++ Rubik.cpp Cube.cpp Cube.hpp Cross.cpp Cross.hpp Corners.cpp Corners.hpp Edges.cpp Edges.hpp OLL.cpp OLL.hpp PLL.cpp PLL.hpp
 
 Example usage:
-cat scrambled.txt | ./Rubik
+cat scrambles.txt | ./Rubik
 
 Example scramble file:
 
