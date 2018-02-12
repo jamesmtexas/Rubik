@@ -10,7 +10,7 @@ std::string format(std::string);
 
 int main(int argc, char **argv) {
 
-  Cube::Cube myCube(false);
+  Cube myCube(false);
     int scrambleNum = 0;
     std::string argString;
     while (std::getline(std::cin, argString)) {
