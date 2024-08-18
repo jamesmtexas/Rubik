@@ -1,6 +1,12 @@
 # Rubik
 <h2>Rubik's cube solver</h2>
 
+Input format:
+Input is a series of moves which represents scrambling the cube from a solved state. Multiple scrambles can be provided on separate lines.
+
+Example scramble:
+B2 F2 L' R2 F2 L R' B2 U2 F' D' U F U2 L2 D F2 U' R B2
+
 Example usage:
 cat scrambles.txt | ./Rubik
 
