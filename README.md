@@ -1,8 +1,6 @@
 # Rubik
 <h2>Rubik's cube solver</h2>
 
-~1500 sloc
-
 Example usage:
 cat scrambles.txt | ./Rubik
 
@@ -19,7 +17,7 @@ Build a cross somewhere on the cube. By "cross" we mean solving all 4 edge piece
 Corners:
 Next we solve each of the four corners on the same layer that we built the cross.
 
-Edges: The center pieces are fixed, so the finish the second layer of the cube we simply need to solve the 4 edge pieces of the second layer.
+Edges: The center pieces are fixed, so to finish the second layer of the cube we only need to solve the 4 edge pieces of the second layer.
 
 OLL: OLL stands for Orient Last Layer. The beginner's method splits this into 2 steps: first we orient the edges, then the corners. This simplifies the step as we may check a smaller subsection of possible cases (9 cases rather than 57).
 
